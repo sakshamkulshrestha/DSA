@@ -1,19 +1,23 @@
 class Solution {
 public:
     int removeDuplicates(vector<int> &v) {
-        int k=2;
+        int j=1;
+        int count=1;
 
-        if(v.size()<=2){ 
-            return v.size();
-        }
+        for(int i=1; i<v.size(); i++){
+            if(v[i] == v[i-1]){
+                count++;
+            }
+            else{
+                count = 1;
+            }
 
-        for(int i=2; i<v.size(); i++){
-            if(v[i] != v[k-2]){
-                v[k] = v[i];
-                k++;
+            if(count <= 2){
+                v[j] = v[i];
+                j++;
             }
         }
 
-        return k;       
+        return j;
     }
 };
