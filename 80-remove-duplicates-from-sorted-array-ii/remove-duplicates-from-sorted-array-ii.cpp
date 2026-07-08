@@ -1,7 +1,7 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& v) {
-        map<int, int> map;
+        unordered_map<int, int> map;
         for(int i=0; i<v.size(); i++){
             if(map.count(v[i]) > 0){
                 map[v[i]]++;
@@ -25,6 +25,8 @@ public:
                 k++;
             }
         }
+
+        sort(v.begin(), v.begin() + k);
 
         return k;
     }
