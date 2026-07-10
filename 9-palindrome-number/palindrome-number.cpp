@@ -7,7 +7,7 @@ public:
 
         string s;
         while(x>0){
-            s += x%10;
+            s += char('0' + x % 10);
             x /= 10;
         }
 
