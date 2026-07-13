@@ -1,5 +1,9 @@
 class Solution {
 public:
+    Solution() {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+    }
     vector<int> twoSum(vector<int> &v, int t) {
         int n = v.size();
         vector<int> ans;
