@@ -1,13 +1,15 @@
 class Solution {
 public:
-    bool containsDuplicate(vector<int> &v) {
-        unordered_set<int> map;
-        for(int val : v){
-            if(map.count(val) > 0){
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_map<int, int> map;
+
+        for(int val : nums){
+            if(map[val]){
                 return true;
             }
-
-            map.insert(val);
+            else{
+                map[val] = 1;
+            }
         }
 
         return false;
