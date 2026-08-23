@@ -1,25 +1,21 @@
 class Solution {
 public:
-    bool checkPerfectNumber(int num) {
-        int n = num;
+    bool checkPerfectNumber(int num){
+        if(num <= 1){
+            return false;
+        }
 
-        unordered_map<int, int> map;
-        int prime = 1;
-        while(n > prime){
-            if(n%prime == 0){
-                map[prime] = 1;
+        int sum = 1;
+        for(int i=2; i*i<=num; i++){
+            if(num%i == 0){
+                sum += i;
+
+                if (i != num/i){
+                    sum += num/i;
+                }
             }
-            prime++;
         }
 
-        int sum = 0;
-        for(auto val : map){
-            sum += val.first;
-        }
-
-        if(sum == num){
-            return true;
-        }
-        return false;
+        return sum == num;
     }
 };
