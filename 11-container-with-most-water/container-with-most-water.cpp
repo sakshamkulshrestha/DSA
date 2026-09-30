@@ -4,7 +4,7 @@ public:
         int st = 0;
         int end = h.size() - 1;
 
-        int area = INT_MIN;
+        int area = 0;
         while(st < end){
             int w = end - st;
             int newA = w * min(h[st], h[end]);
