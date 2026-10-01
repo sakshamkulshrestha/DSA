@@ -6,13 +6,13 @@ public:
 
         for(int i=0; i<nums.size(); i++){
             int need = t-nums[i];
-            if(map.count(need)){
+            if(map.contains(need)){
                 v[0] = i;
                 v[1] = map[need];
 
                 return v;
             }
-            if(!map.count(nums[i])) map.emplace(nums[i], i);
+            if(!map.contains(nums[i])) map.emplace(nums[i], i);
         }
 
         return v; 
