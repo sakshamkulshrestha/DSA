@@ -13,6 +13,13 @@ class Solution {
 
             while(st < end){
                 int sum = v[i] + v[st] + v[end];
+
+                int rClose = Math.abs(sum - t);
+                if(rClose < minDiff){
+                    minDiff = rClose;
+                    bestSum = sum;
+                }
+
                 if(sum > t){
                     end--;
                 }
@@ -21,12 +28,6 @@ class Solution {
                 }
                 else{
                     return sum;
-                }
-                
-                int rClose = Math.abs(sum - t);
-                if(rClose < minDiff){
-                    minDiff = rClose;
-                    bestSum = sum;
                 }
             }
         }
